@@ -1,3 +1,6 @@
 angular.module('gerenciadorErp').value("config", {
-  INSTALLER_URL: "http://installer.tagpago.com.br/rest/",
+  // DEFINICOES DO REST
+  INSTALLER_URL: "http://localhost/installer/rest/",
+  USER_REST:     "admin",
+  PASS_REST:     "g4tt3c",
 });

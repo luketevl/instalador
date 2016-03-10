@@ -1,6 +1,12 @@
 // Criando Serviço de Comunicação com o Instalador
 angular.module('gerenciadorErp').factory('installerAPI', function($http, config){
-
+  var config_http = {
+                      headers: {
+                                  'Authorization': 'Basic ' +btoa(config.USER_REST + ':' +config.PASS_REST),
+                                },
+                      "withCredentials" : true,
+                      "Content-Type"    : "application/json"
+  };
   /**
     * Verifica se pasta existe
     * @author lukete
@@ -9,12 +15,10 @@ angular.module('gerenciadorErp').factory('installerAPI', function($http, config)
     * @return $http response
   **/
   var _pastaExiste = function(pasta){
-    pasta  = {
-      'pasta': pasta
-    };
-    return $http.get(config.INSTALLER_URL + "clientes_rest/pasta_existe/", pasta);
+    console.log(config_http);
+    return $http.get(config.INSTALLER_URL + "clientes_rest/pasta_existe/"+pasta, config_http);
   };
   return{
     pastaExiste: _pastaExiste,
-  }
+  };
 });
