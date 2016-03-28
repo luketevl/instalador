@@ -1,2 +1,2 @@
 // Criando MODULO PRINCIPAL da aplicação
-angular.module('gerenciadorErp', []);
+angular.module('gerenciadorErp', ['ngAnimate', 'ngRoute']);

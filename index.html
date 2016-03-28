@@ -1,26 +1,55 @@
-<DOCTYPE!>
 <html ng-app="gerenciadorErp">
   <head>
     <title>Gerenciador de ERPS</title>
     <!-- SYTLES -->
-    <link type="text/css" href="lib/bootstrap/dist/css/style.css" />
-    <link type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- SCRIPTS CORE-->
     <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-animate/angular-animate.min.js"></script>
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- SCRIPTS SYSTEM-->
+    <!-- INCLUDE SYSTEM -->
     <script src="js/app.js"></script>
+
+    <!-- INCLUDES VALUES -->
+    <script src="js/configs/routeConfig.js"></script>
+
+    <!-- INCLUDES VALUES -->
     <script src="js/values/configValue.js"></script>
+
+    <!-- INCLUDES SERVICES -->
     <script src="js/services/installerAPIService.js"></script>
+
+    <!-- INCLUDES DIRECTIVES -->
+
+    <!-- INCLUDES CONTROLLERS -->
     <script src="js/controllers/installController.js"></script>
+    <script src="js/controllers/principalController.js"></script>
 
   </head>
   <body>
-    <div ng-controller="installCtrl">
+    <!-- MAIN -->
+    <main class= "container-fluid">
+      <!-- INCLUDE HEADER -->
+        <header ng-include="'views/header.html'" class="row"></header><!-- end INCLUDE HEADER -->
 
-    </div>
+        <!-- SESSION CONTENT -->
+        <section class="row">
+          <!-- INCLUDE SIDEBAR -->
+          <div ng-include="'views/sidebar.html'" class="col-xs-4 col-md-2"></div><!-- end INCLUDE SIDEBAR -->
+
+          <!-- AREA SPA -->
+          <div ng-view class="col-xs-12 col-sm-6 col-md-9"></div> <!-- end AREA SPA -->
+        </section> <!-- end SESSION CONTENT -->
+
+        <!-- INCLUDE FOOTER -->
+        <footer ng-include="'views/footer.html'" class="row"></footer><!-- end INCLUDE FOOTER -->
+
+  </main> <!-- end MAIN -->
+
   </body>
 </html>

@@ -1,0 +1,49 @@
+body{
+  background-color:  #F1F2F3;
+  color: #FFF;
+}
+a:hover, a:active, a:visited, a:link{ text-decoration: none;}
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+  ul li{
+    padding: 14px;
+  }
+    ul li:not(:last-child){
+      border-bottom: 1px solid rgba(0,0,0,.11)
+    }
+    ul li:hover{
+      cursor: pointer;
+    }
+    ul li:hover, ul li:visited{
+      background-color: #eee;
+    }
+main > header, main > footer{
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #285DAE;
+}
+nav#sidebar{
+  border-right: 1px solid rgba(0,0,0,.11);
+  background-color: #fff;
+}
+  nav#sidebar span + span, nav#sidebar{
+    color: #000;
+  }
+  nav#sidebar li a span + span{
+    margin-left: 6px;
+  }
+  main nav#sidebar section aside{
+    display: flex;
+    flex-wrap: reverse-wrap;
+  }
+    main nav#sidebar section span.glyphicon{
+      font-size: 2.5em;
+    }
+
+.copy{
+  text-align: center;
+}
