@@ -1,22 +1,26 @@
+body, a{
+  color: #000;
+}
 body{
   background-color:  #F1F2F3;
-  color: #FFF;
 }
 a:hover, a:active, a:visited, a:link{ text-decoration: none;}
 ul{
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
-  ul li{
+  ul li a{
     padding: 14px;
+    display: block;
   }
     ul li:not(:last-child){
       border-bottom: 1px solid rgba(0,0,0,.11)
     }
-    ul li:hover{
+    ul li a:hover{
       cursor: pointer;
     }
-    ul li:hover, ul li:visited{
+    ul li a:hover, ul li a:visited{
       background-color: #eee;
     }
 main > header, main > footer{
@@ -25,6 +29,7 @@ main > header, main > footer{
   justify-content: flex-start;
   align-items: flex-start;
   background-color: #285DAE;
+  color: #FFF;
 }
 nav#sidebar{
   border-right: 1px solid rgba(0,0,0,.11);
@@ -42,8 +47,11 @@ nav#sidebar{
   }
     main nav#sidebar section span.glyphicon{
       font-size: 2.5em;
-    }
 
+    }
+.glyphicon{
+  color: #285DAE;
+}
 .copy{
   text-align: center;
 }
