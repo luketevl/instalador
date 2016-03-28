@@ -1,8 +1,8 @@
 angular.module('gerenciadorErp').config(function($routeProvider){
 
-  // ROTA PRINCIPAL
-  $routeProvider.when('/principal', {
-    templateUrl: 'views/principal.html',
+  // ROTA MEU PLANO
+  $routeProvider.when('/meu_plano', {
+    templateUrl: 'views/meu_plano.html',
     controller: 'principalController',
   });
 
