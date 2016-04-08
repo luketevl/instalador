@@ -2,13 +2,10 @@
   <head>
     <title>Gerenciador de ERPS</title>
     <!-- METAS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- FONTES -->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SYTLES -->
-    <link rel="stylesheet" type="text/css" href="lib/Materialize/dist/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/material-design-lite/material.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- SCRIPTS CORE-->
@@ -16,7 +13,10 @@
     <script src="lib/angular-route/angular-route.min.js"></script>
     <script src="lib/angular-animate/angular-animate.min.js"></script>
     <script src="lib/jquery/dist/jquery.min.js"></script>
-    <script src="lib/Materialize/dist/js/materialize.min.js"></script>
+    <script src="lib/material-design-lite/material.min.js"></script>
+
+    <!-- FONTES -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- INCLUDE SYSTEM -->
     <script src="js/app.js"></script>
@@ -39,24 +39,22 @@
     <script src="js/controllers/checkoutController.js"></script>
 
   </head>
-  <body class="mdl-layout mdl-js-layout">
+  <body>
+
     <!-- INCLUDE HEADER -->
-    <header ng-include="'views/header.html'" class="mdl-layout__header"></header><!-- end INCLUDE HEADER -->
+    <ng-include src="'views/header.html'"></ng-include><!-- end INCLUDE HEADER -->
+    <!-- SIDEBAR -->
+    <ng-include src="'views/sidebar.html'"></ng-include>
 
     <!-- MAIN -->
-    <main>
-        <!-- SESSION CONTENT -->
-        <section class="mdl-layout__header-row" ng-view>
+    <main class="mdl-layout__content">
+      <!-- SESSION CONTENT -->
+      <section class="page-content" ng-view>
+      </section> <!-- end SESSION CONTENT -->
+    </main> <!-- end MAIN -->
 
-          <!-- AREA SPA -->
-          <div ></div> <!-- end AREA SPA -->
-        </section> <!-- end SESSION CONTENT -->
-
-
-  </main> <!-- end MAIN -->
-
-  <!-- INCLUDE FOOTER -->
-  <footer ng-include="'views/footer.html'"></footer><!-- end INCLUDE FOOTER -->
+    <!-- INCLUDE FOOTER -->
+    <footer ng-include="'views/footer.html'"></footer><!-- end INCLUDE FOOTER -->
 
   </body>
 </html>
