@@ -1,8 +1,14 @@
 <html ng-app="gerenciadorErp">
   <head>
     <title>Gerenciador de ERPS</title>
+    <!-- METAS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONTES -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- SYTLES -->
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/Materialize/dist/css/materialize.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- SCRIPTS CORE-->
@@ -10,7 +16,7 @@
     <script src="lib/angular-route/angular-route.min.js"></script>
     <script src="lib/angular-animate/angular-animate.min.js"></script>
     <script src="lib/jquery/dist/jquery.min.js"></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/Materialize/dist/js/materialize.min.js"></script>
 
     <!-- INCLUDE SYSTEM -->
     <script src="js/app.js"></script>
@@ -33,25 +39,24 @@
     <script src="js/controllers/checkoutController.js"></script>
 
   </head>
-  <body>
-    <!-- MAIN -->
-    <main class= "container-fluid">
-      <!-- INCLUDE HEADER -->
-        <header ng-include="'views/header.html'" class="row"></header><!-- end INCLUDE HEADER -->
+  <body class="mdl-layout mdl-js-layout">
+    <!-- INCLUDE HEADER -->
+    <header ng-include="'views/header.html'" class="mdl-layout__header"></header><!-- end INCLUDE HEADER -->
 
+    <!-- MAIN -->
+    <main>
         <!-- SESSION CONTENT -->
-        <section class="row">
-          <!-- INCLUDE SIDEBAR -->
-          <div ng-include="'views/sidebar.html'" class="col-xs-4 col-md-2"></div><!-- end INCLUDE SIDEBAR -->
+        <section class="mdl-layout__header-row" ng-view>
 
           <!-- AREA SPA -->
-          <div ng-view class="col-xs-8 col-sm-8 col-md-10"></div> <!-- end AREA SPA -->
+          <div ></div> <!-- end AREA SPA -->
         </section> <!-- end SESSION CONTENT -->
 
-        <!-- INCLUDE FOOTER -->
-        <footer ng-include="'views/footer.html'" class="row"></footer><!-- end INCLUDE FOOTER -->
 
   </main> <!-- end MAIN -->
+
+  <!-- INCLUDE FOOTER -->
+  <footer ng-include="'views/footer.html'"></footer><!-- end INCLUDE FOOTER -->
 
   </body>
 </html>
